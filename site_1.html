@@ -261,7 +261,7 @@
                     card.className = 'card';
                     
                     card.innerHTML = `
-                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image" onerror="this.onerror=null; this.src='/api/placeholder/300/180'; this.alt='Imagem não disponível';">
+                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image" onerror="this.onerror=null; this.src='./180.png'; this.alt='Imagem não disponível';">
                         <div class="card-content">
                             <h3 class="card-title">${item.title.substring(0, 20)}...</h3>
                             <p class="card-text">ID: ${item.id} - Album: ${item.albumId}</p>
