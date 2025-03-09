@@ -235,8 +235,18 @@
                     return data;
                 } catch (error) {
                     console.error('Erro:', error);
-                    loading.textContent = 'Erro ao carregar os dados. Tente novamente mais tarde.';
-                    return [];
+                    // Criar dados fictícios em caso de falha na API
+                    loading.textContent = 'Usando dados locais (API indisponível)';
+                    
+                    // Dados de exemplo em caso de falha na API
+                    const placeholderData = Array.from({ length: 8 }, (_, i) => ({
+                        id: i + 1,
+                        albumId: Math.floor(Math.random() * 10) + 1,
+                        title: `Item de exemplo ${i + 1}`,
+                        thumbnailUrl: '/api/placeholder/300/180'
+                    }));
+                    
+                    return placeholderData;
                 }
             }
 
@@ -251,7 +261,7 @@
                     card.className = 'card';
                     
                     card.innerHTML = `
-                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image">
+                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image" onerror="this.onerror=null; this.src='/api/placeholder/300/180'; this.alt='Imagem não disponível';">
                         <div class="card-content">
                             <h3 class="card-title">${item.title.substring(0, 20)}...</h3>
                             <p class="card-text">ID: ${item.id} - Album: ${item.albumId}</p>
