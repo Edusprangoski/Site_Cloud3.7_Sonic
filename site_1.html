@@ -308,21 +308,21 @@
     <div class="slider-container">
         <div class="slider" id="slider">
             <div class="slide">
-                <img src="/api/placeholder/1200/400" alt="Slide 1">
+                <img src="img\400.png" alt="Slide 1">
                 <div class="slide-content">
                     <h2>Slide 1</h2>
                     <p>Descrição do primeiro slide com informações importantes.</p>
                 </div>
             </div>
             <div class="slide">
-                <img src="/api/placeholder/1200/400" alt="Slide 2">
+                <img src="img\400.png" alt="Slide 2">
                 <div class="slide-content">
                     <h2>Slide 2</h2>
                     <p>Descrição do segundo slide com conteúdo interessante.</p>
                 </div>
             </div>
             <div class="slide">
-                <img src="/api/placeholder/1200/400" alt="Slide 3">
+                <img src="img\400.png" alt="Slide 3">
                 <div class="slide-content">
                     <h2>Slide 3</h2>
                     <p>Descrição do terceiro slide para completar a apresentação.</p>
@@ -464,7 +464,7 @@
                         id: i + 1,
                         albumId: Math.floor(Math.random() * 10) + 1,
                         title: `Item de exemplo ${i + 1}`,
-                        thumbnailUrl: '/api/placeholder/300/180'
+                        thumbnailUrl: 'img/180.png'
                     }));
                     
                     return placeholderData;
@@ -482,7 +482,7 @@
                     card.className = 'card';
                     
                     card.innerHTML = `
-                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image" onerror="this.onerror=null; this.src='/api/placeholder/300/180'; this.alt='Imagem não disponível';">
+                        <img src="${item.thumbnailUrl}" alt="${item.title}" class="card-image" onerror="this.onerror=null; this.src='img/180.png'; this.alt='Imagem não disponível';">
                         <div class="card-content">
                             <h3 class="card-title">${item.title.substring(0, 20)}...</h3>
                             <p class="card-text">ID: ${item.id} - Album: ${item.albumId}</p>
